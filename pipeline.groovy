@@ -7,7 +7,7 @@ node('docker') {
     stage 'Build jar'
     def server = Artifactory.server 'artifactory'
     def rtGradle = Artifactory.newGradleBuild()
-    rtGradle.useWrapper = true
+    //rtGradle.useWrapper = true
     rtGradle.deployer server: server, repo: 'maven'
 
     def gradleVersion = '-Pversion=' + version
